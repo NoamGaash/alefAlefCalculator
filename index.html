@@ -26,6 +26,7 @@
             // מבקש מהשרת את המידע על החנות
             $.get("products.json", function(products) {
                 console.log(products);
+                products = JSON.parse(products);
                 products.shop.forEach(function(item, index) {
                     var product =
                         $("<div>") // עוטף את הלייבל ואת האינפוט
