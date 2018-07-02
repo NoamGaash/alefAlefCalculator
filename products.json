@@ -11,20 +11,42 @@
             {
                 "name":"כיסא",
                 "price":"430"
+            },
+            {
+                "name":"מיטה",
+                "price":"750"
             }
     ],
     "rates": [
         {
             "currency":"ILS",
-            "rate": 1
+            "rate": 1,
+			"img": "https://www.hamara.co.il/wp-content/themes/costa/img/flags/ils.png"
         },
         {
             "currency":"USD",
-            "rate": 0.278381
+            "rate": 0.278381,
+			"img": "https://www.hamara.co.il/wp-content/themes/costa/img/flags/usd.png"
         },
         {
             "currency":"EUR",
-            "rate": 0.236105987
+            "rate": 0.236105987,
+			"img": "https://www.hamara.co.il/wp-content/themes/costa/img/flags/eur.png"
+        },
+        {
+            "currency":"GBP",
+            "rate": 0.2084,
+			"img": "https://www.hamara.co.il/wp-content/themes/costa/img/flags/gbp.png"
+        },
+        {
+            "currency":"JPY",
+            "rate": 31.0669,
+			"img": "https://www.hamara.co.il/wp-content/themes/costa/img/flags/jpy.png"
+        },
+        {
+            "currency":"RUB",
+            "rate": 17.2453,
+			"img": "https://www.hamara.co.il/wp-content/themes/costa/img/flags/rub.png"
         }
     ]
 }
