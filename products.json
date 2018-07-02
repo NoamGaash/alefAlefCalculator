@@ -1,0 +1,30 @@
+{
+    "shop": [
+            {
+                "name":"שידה",
+                "price":"240"
+            },
+            {
+                "name":"מדף",
+                "price":"300"
+            },
+            {
+                "name":"כיסא",
+                "price":"430"
+            }
+    ],
+    "rates": [
+        {
+            "currency":"ILS",
+            "rate": 1
+        },
+        {
+            "currency":"USD",
+            "rate": 0.278381
+        },
+        {
+            "currency":"EUR",
+            "rate": 0.236105987
+        }
+    ]
+}

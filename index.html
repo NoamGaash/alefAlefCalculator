@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            א.א נגרות ובניו בעמ
+        </title>
+        <meta charset="utf-8"/>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <script>
+            // מבקש מהשרת את המידע על החנות
+            $.get("products.json", function(products) {
+                console.log(products);
+                products.shop.forEach(function(item, index) {
+                    var product =
+                        $("<div>") // עוטף את הלייבל ואת האינפוט
+                            .addClass("form-group")
+                            .append(
+                                $("<label>")
+                                .attr("for", "product"+index)
+                                .html(item.name + " במחיר " + item.price + ": ")
+                            )
+                            .append(
+                                $("<input type=\"text\">")
+                                .attr("id", "product"+index)
+                                .attr("name", "product"+index)
+                                .attr("data-price", item.price)
+                                .val(0)
+                                .addClass("form-control")
+                            );
+                    $("form").append(product);
+                });
+            })
+        </script>
+        <style>
+            .currencies input[type=radio]{
+                display:none;
+            }
+            .currencies span{
+                background-color: lightgreen;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            .currencies input[type=radio]:checked + span{
+                border: 4px solid lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>מחשבון מחירים</h1>
+            </header>
+            <form>
+            </form>
+            
+            <div class="jumbotron">
+                <h2>מחיר סופי:</h2>
+                <p id="totalPrice">0 ILS</p>
+                <div class="currencies">
+                    <label>
+                        <input type="radio" name="currency" value="ILS" checked>
+                        <span>ILS</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="currency" value="USD">
+                        <span>USD</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="currency" value="EUR">
+                        <span>EUR</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
